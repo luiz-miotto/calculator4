@@ -1,0 +1,83 @@
+
+
+#calculatorContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap:wrap;
+    
+    
+}
+
+#inputDisplay{
+    height:100px;
+    background-color:aqua;
+}
+
+#buttonsContainer{
+    display:flex;
+    
+    
+    flex-direction: column;
+    height:1000px;
+    width:160px;
+}
+
+#firstRow{
+    display:flex;
+    height: 100px;
+    width:160px;
+    
+}
+
+
+
+#secondRow{
+    display:flex;
+    width:160px;
+    height: 100px;
+   
+}
+
+
+
+#thirdRow{
+    display:flex;
+    width:400px;
+    height: 100px;
+
+}
+
+#fourthRow{
+    display:flex;
+    width:400px;
+    height: 100px;
+
+}
+
+#fifthRow{
+    display:flex;
+    width:400px;
+    height: 100px;
+
+}
+
+
+.operand{ 
+    padding: 40px; 
+    font-size: 20px;
+    
+}
+
+.operator{
+    padding: 40px;
+    font-size: 20px;
+    
+}
+
+.zeroButton{
+    padding: 40px 80px;
+    font-size: 20px;
+    
+}
