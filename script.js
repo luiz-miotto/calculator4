@@ -177,6 +177,10 @@ function doMath(){
              --equalsCounter;
              secondValueCounter = 0;
          } else if (divideCounter >= 1){
+             if (secondDisplayValue == 0){
+                 alert("why did you try to divide by zero?")
+                 divideByZero();
+             } else {
              dividedValue = divide(displayValue,secondDisplayValue);
              displayValue = dividedValue
              secondDisplayValue = "";
@@ -184,6 +188,7 @@ function doMath(){
             divideCounter = 0;
             --equalsCounter;
             secondValueCounter = 0;
+             }
         };
 };
 
@@ -251,6 +256,14 @@ divideButton.addEventListener("click", () =>{
     console.log(`This is the value of ${counter}`);
 });
 
+function divideByZero(){
+    displayValue = "";
+    secondDisplayValue = "";
+    inputDisplay.innerText = "";
+    counter = 0;
+    divideCounter = 0;
+    secondValueCounter = 0
+}
 
 
 
