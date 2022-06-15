@@ -11,6 +11,7 @@ var divideCounter = 0;
 var multiplyCounter = 0;
 var equalsCounter = 0;
 var secondValueCounter = 0;
+var noEquals = 0;
 /*
 var increment = function(){
     return function(counter){
@@ -67,10 +68,17 @@ function secondPostEqualsFunction(x){
             inputDisplay.innerText = secondDisplayValue;   
 }
 
-
+// pseudo code
+// need to crate function where if plus is pressed and there is a plus counter or minus/divide/multiply counter, then do math
+function mathWithoutCounters(x){
+    if( noEquals == 1){
+        doMath(x)
+        noEquals == 0;
+    }
+}
 
 function numberActionDeterminer(x){
-if (equalsCounter == 1){
+if (equalsCounter == 1 ){
     equalsOrOperator(x);
 } else { 
     produceDisplayValue(x)
@@ -182,7 +190,7 @@ function doMath(){
 var plus = document.getElementById("plus");
 plus.addEventListener("click", () =>{
     secondValueCounter = 0;
-    if (minusCounter == 1 || multiplyCounter == 1 || divideCounter == 1){
+    if (minusCounter == 1 || multiplyCounter == 1 || divideCounter == 1 || plusCounter == 1){
         console.log(`displayValue is ${displayValue}. secondDisplayValue is ${secondDisplayValue}`)
         doMath();
       }
@@ -200,7 +208,7 @@ plus.addEventListener("click", () =>{
 var minus = document.getElementById("minus");
 minus.addEventListener("click", () =>{
     secondValueCounter = 0;
-    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1){
+    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1 || minusCounter == 1){
         doMath();
       }
     ++counter;
@@ -216,7 +224,7 @@ minus.addEventListener("click", () =>{
 var multiplyButton = document.getElementById("multiply");
 multiplyButton.addEventListener("click", () =>{
     secondValueCounter = 0;
-    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1){
+    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1 || minusCounter == 1){
         doMath();
       }
     ++counter;
@@ -231,7 +239,7 @@ multiplyButton.addEventListener("click", () =>{
 var divideButton = document.getElementById("divide");
 divideButton.addEventListener("click", () =>{
     secondValueCounter = 0;
-    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1){
+    if (plusCounter == 1 || multiplyCounter == 1 || divideCounter == 1 || minusCounter){
         doMath();
       }
     ++counter;
