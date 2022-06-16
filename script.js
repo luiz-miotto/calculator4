@@ -143,7 +143,7 @@ function counterDeincrement(counter){
 function doMath(){
     if (plusCounter >= 1){
         addedValue = sum(displayValue,secondDisplayValue);
-        displayValue = addedValue
+        displayValue = addedValue;
         secondDisplayValue = "";
         inputDisplay.innerText = displayValue;
         plusCounter = 0;
@@ -380,6 +380,20 @@ period.addEventListener("click", () => {
 });
 
 
+var negativeButton = document.getElementById("negativeButton");
+negativeButton.addEventListener("click", () => {
+    let negativeValue = "-"
+        
+    if (displayValue.startsWith("-") == true ){
+       displayValue = displayValue.substring(1);
+       inputDisplay.innerText = displayValue;
+    } else {
+       var negativeNumber = negativeValue.concat(displayValue);
+       inputDisplay.innerText = negativeNumber;
+    }
+    // need to add logic for secondValue
+})
+
 
 var clearButton = document.getElementById("clear");
 clearButton.addEventListener("click", () => {
@@ -396,22 +410,26 @@ clearButton.addEventListener("click", () => {
 function sum(x,y){
     let z;
     
-    return z = parseFloat(x) + parseFloat(y);
+     z = parseFloat(x) + parseFloat(y);
+     return z.toString();
 }
 
 function subtract(x,y){
     let z;
-    return z = parseFloat(x)-parseFloat(y);
+    z = parseFloat(x)-parseFloat(y);
+    return z.toString();
 }
 
 function multiply(x,y){
     let z;
-    return z = parseFloat(x)*parseFloat(y);
+    z = parseFloat(x)*parseFloat(y);
+    return z.toString();
 }
 
 function divide(x,y){
     let z;
-    return z = parseFloat(x)/parseFloat(y);
+    z = parseFloat(x)/parseFloat(y);
+    return z.toString();
 }
 
 
