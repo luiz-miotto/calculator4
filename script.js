@@ -383,14 +383,30 @@ period.addEventListener("click", () => {
 var negativeButton = document.getElementById("negativeButton");
 negativeButton.addEventListener("click", () => {
     let negativeValue = "-"
-        
-    if (displayValue.startsWith("-") == true ){
+   if (secondValueCounter < 1){     
+    if (displayValue.startsWith("-")){
        displayValue = displayValue.substring(1);
        inputDisplay.innerText = displayValue;
+       console.log("this number is negative");
     } else {
-       var negativeNumber = negativeValue.concat(displayValue);
-       inputDisplay.innerText = negativeNumber;
+        displayValue = negativeValue.concat(displayValue);
+       inputDisplay.innerText = displayValue;
     }
+} else {
+    if (secondDisplayValue.startsWith("-")){
+        secondDisplayValue = secondDisplayValue.substring(1);
+        inputDisplay.innerText = secondDisplayValue;
+        console.log("this number is negative");
+     } else {
+         if (secondDisplayValue == ""){
+            secondDisplayValue = "-";
+            inputDisplay.innerText = secondDisplayValue;
+         } else {
+         secondDisplayValue = negativeValue.concat(secondDisplayValue);
+        inputDisplay.innerText = secondDisplayValue;
+         }
+     }
+}
     // need to add logic for secondValue
 })
 
@@ -405,6 +421,35 @@ clearButton.addEventListener("click", () => {
     console.log(secondDisplayValue);
 });
 
+var percentButton = document.getElementById("percentButton");
+percentButton.addEventListener("click", () => {
+    let percentValue = "0.";
+    if (secondValueCounter < 1){     
+        if (displayValue.startsWith("0.")){
+           displayValue = displayValue.substring(1);
+           inputDisplay.innerText = displayValue;
+           console.log("this number is negative");
+        } else {
+            displayValue = percentValue.concat(displayValue);
+           inputDisplay.innerText = displayValue;
+        }
+    } else {
+        if (secondDisplayValue.startsWith("0.")){
+            secondDisplayValue = secondDisplayValue.substring(1);
+            inputDisplay.innerText = secondDisplayValue;
+            console.log("this number is negative");
+         } else {
+             if (secondDisplayValue == ""){
+                secondDisplayValue = "0.";
+                inputDisplay.innerText = secondDisplayValue;
+             } else {
+             secondDisplayValue = percentValue.concat(secondDisplayValue);
+            inputDisplay.innerText = secondDisplayValue;
+             }
+         }
+    }
+}
+)
 
 
 function sum(x,y){
